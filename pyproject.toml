@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "claude-web-ui"
+version = "1.5.0"
+description = "Web UI for Claude Code CLI — token streaming, tool visualization, checkpoint rollback, multi-session management"
+authors = [{name = "ItsPiura"}]
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "openpyxl",
+    "pypdf",
+    "python-docx",
+    "python-multipart",
+    "python-pptx",
+    "uvicorn",
+    "xlrd",
+]
+
+[project.scripts]
+claude-web = "claude_web.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
